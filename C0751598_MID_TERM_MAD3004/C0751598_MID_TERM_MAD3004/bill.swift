@@ -8,15 +8,15 @@
 
 import Foundation
 
-class Bill{
+class Bill: IDisplay{
     
-    var billId:Int?
+    var billId:Int = 0
     var billDate:Date = Date()
     var billType:String = String()
-    var totalBillAmount:Int?
+    var totalBillAmount:Float = 0
     
-    
-    init(_: billId, _:billDate,_: billType,_: totalBillAmount ) {
+
+    init(billId: Int, billDate:Date,billType: String,totalBillAmount: Float ) {
         self.billId = billId
         self.billDate = billDate
         self.billType = billType
@@ -24,5 +24,17 @@ class Bill{
     }
     
     
+    func updateTotalBillAmount(amountIncreasedBy: Float) {
+       self.totalBillAmount = self.totalBillAmount + amountIncreasedBy
+    }
+    
+    func printDetails() {
+        print("Bill Id is : \(String(self.billId))")
+        print("Bill Date is : \(self.billDate)")
+        print("Bill Type is : \(String(self.billType))")
+        print("Total Bill Amount is : \(String(self.totalBillAmount))")
+    }
     
 }
+    
+

@@ -8,5 +8,12 @@
 
 import Foundation
 
-print("Hello, World!")
+
+extension Float
+{
+    public func currency() -> String
+    {
+        return String.init(format: "$%0.2f", self)
+    }
+}
 

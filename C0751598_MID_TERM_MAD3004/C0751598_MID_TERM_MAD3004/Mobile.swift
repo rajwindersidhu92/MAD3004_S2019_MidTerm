@@ -17,7 +17,7 @@ class Mobile: Bill {
     var minuteUsed:Float = 0.0
     
     init(mobileManufacturerName : String, planName : String, mobileNumber : String, internetGBUsed : Float , minuteUsed : Float, billId: Int, billDate: Date, billType: String, totalbillAmount: Float) {
-        super.init(billId: <#T##Int#>, billDate: <#T##Date#>, billType: <#T##String#>, totalBillAmount: <#T##Float#>)
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: totalbillAmount)
         self.mobileManufacturerName = mobileManufacturerName
         self.planName = planName
         self.mobileNumber = mobileNumber

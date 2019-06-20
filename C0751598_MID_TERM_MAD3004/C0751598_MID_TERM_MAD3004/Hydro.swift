@@ -12,7 +12,7 @@ class Hyro: Bill {
     var unitConsumed:Float = 0.0
     
     init(agencyName : String, unitConsumed : Float, billId: Int, billDate: Date, billType: String, totalbillAmount: Float) {
-        super.init(billId: <#T##Int#>, billDate: <#T##Date#>, billType: <#T##String#>, totalBillAmount: <#T##Float#>)
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: totalbillAmount)
         self.agencyName = agencyName
         self.unitConsumed = unitConsumed
     

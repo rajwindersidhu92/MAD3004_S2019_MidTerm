@@ -33,7 +33,10 @@ class Customer{
         self.firstName = firstName
         self.lastName = lastName
         self.emailId = emailId
-        self.bills = bills!
+        if let b = bills
+        {
+            self.bills = b
+        }
     }
     
     func addMoreBills(newBills : [Int: Bill]){

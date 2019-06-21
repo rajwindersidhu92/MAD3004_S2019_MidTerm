@@ -26,46 +26,45 @@ var bill2 = Internet(internetGBUsed : 500.0, providerName : "Rogers", billId : 2
 
 cutomer1.addMoreBills(newBills: [2 : bill2])
 
+var cutomer2 = Customer(customerId :2, firstName :"Vipul", lastName : "Garg", emailId : "adurrant1@github.io", bills: [1 : bill1])
+
+cutomer2.addMoreBills(newBills: [2 : bill2])
+
+var bill3 = Mobile(mobileManufacturerName : "Galaxy Samsung Inc.", planName : "Prepaid Talk + Text plan", mobileNumber : "1234567890", internetGBUsed : 5.0 , minuteUsed : 356.0, billId: 3, billDate: Date(), billType: "Mobile", totalbillAmount: 250.69)
+
+var bill4 = Mobile(mobileManufacturerName : "Apple Inc. iPhone X MAX+", planName : "LTE+3G 9.5GB Promo plan", mobileNumber : "9012345678", internetGBUsed :  4.0 , minuteUsed : 230.0, billId: 4, billDate: Date(), billType: "Mobile", totalbillAmount: 300.78)
+
+cutomer2.addMoreBills(newBills: [3 : bill3])
+cutomer2.addMoreBills(newBills: [4 : bill4])
 
 
-Customer Id : 2
-Customer Full Name : Vipul Garg
-Customer Email ID : adurrant1@github.io
----- Bill Information ----
-******************************************
-Bill Id : 1
-Bill Date : Wednesday, 19 June, 2019
-Bill Type : Hydro
-Bill Amount : $45.35
-Agency Name : Planet Energy
-Unit Consumed : 29 Units
-******************************************
-Bill Id : 1
-Bill Date : Wednesday, 19 June, 2019
-Bill Type : Internet
-Bill Amount : $56.50
-Provider Name : Rogers
-Internet Usage : 500 GB
-******************************************
-Bill Id : 1
-Bill Date : Thursday, 24 January, 2019
-Bill Type : Mobile
-Bill Amount : $250.69
-Manufacturer Name : Galaxy Samsung Inc.
-Plane Name : Prepaid Talk + Text plan
-Mobile Number : +11234567890
-Internet Usage : 5 GB
-Minutes Usage : 356 minutes
-******************************************
-Bill Id : 1
-Bill Date : Wednesday, 19 June, 2019
-Bill Type : Mobile
-Bill Amount : $300.78
-Manufacturer Name : Apple Inc. iPhone X MAX+
-Plane Name : LTE+3G 9.5GB Promo plan
-Mobile Number : +19012345678
-Internet Usage : 4 GB
-Minutes Usage : 230 minutes
-******************************************
-Total Bill Amount to Pay :$653.32
-******************************************
+print("Coustomer Details")
+print("****************")
+print("Customer Id :\(cutomer1.customerId)")
+print("Customer full name :\(cutomer1.firstName) \(cutomer1.lastName)")
+print("Customer Email Id :\(cutomer1.emailId) ")
+print("---- Bill Information ----")
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer1.bills.first?.value.billId))")
+print("Bill Date : \(String(describing: cutomer1.bills.first?.value.billDate))")
+print("Bill Type : \(String(describing: cutomer1.bills.first?.value.billType))")
+print("Bill Amount : \(String(describing: cutomer1.bills.first?.value.totalBillAmount))")
+if let c = cutomer1.bills.first?.value as? Hyro{
+    print("Agency Name :\(c.agencyName)")
+    print("Unit Consumed :\(c.unitConsumed) Units" )
+    
+}
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer1.bills[2]!.billId))")
+print("Bill Date : \(String(describing: cutomer1.bills[2]!.billDate))")
+print("Bill Type : \(String(describing: cutomer1.bills[2]!.billType))")
+print("Bill Amount : \(String(describing: cutomer1.bills[2]!.totalBillAmount))")
+if let c = cutomer1.bills[2] as? Internet{
+    print("Agency Name :\(c.providerName)")
+    print("Unit Consumed :\(c.internetGBUsed) Units" )
+}
+print("***************************************")
+print("Total Bill Amount To be paid : \(cutomer1.totalAmountToBePaid)")
+print("***************************************")
+
+

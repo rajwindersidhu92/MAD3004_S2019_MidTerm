@@ -68,3 +68,66 @@ print("Total Bill Amount To be paid : \(cutomer1.totalAmountToBePaid)")
 print("***************************************")
 
 
+
+
+print("****************")
+print("Customer Id :\(cutomer2.customerId)")
+print("Customer full name :\(cutomer2.firstName) \(cutomer2.lastName)")
+print("Customer Email Id :\(cutomer2.emailId) ")
+print("---- Bill Information ----")
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer2.bills.first?.value.billId))")
+print("Bill Date : \(String(describing: cutomer2.bills.first?.value.billDate))")
+print("Bill Type : \(String(describing: cutomer2.bills.first?.value.billType))")
+print("Bill Amount : \(String(describing: cutomer2.bills.first?.value.totalBillAmount))")
+if let c = cutomer1.bills.first?.value as? Hyro{
+    print("Agency Name :\(c.agencyName)")
+    print("Unit Consumed :\(c.unitConsumed) Units" )
+    
+}
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer2.bills[2]!.billId))")
+print("Bill Date : \(String(describing: cutomer2.bills[2]!.billDate))")
+print("Bill Type : \(String(describing: cutomer2.bills[2]!.billType))")
+print("Bill Amount : \(String(describing: cutomer2.bills[2]!.totalBillAmount))")
+if let c = cutomer2.bills[2] as? Internet{
+    print("Agency Name :\(c.providerName)")
+    print("Unit Consumed :\(c.internetGBUsed) Units" )
+}
+
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer2.bills[3]!.billId))")
+print("Bill Date : \(String(describing: cutomer2.bills[3]!.billDate))")
+print("Bill Type : \(String(describing: cutomer2.bills[3]!.billType))")
+print("Bill Amount : \(String(describing: cutomer2.bills[3]!.totalBillAmount))")
+if let c = cutomer2.bills[3] as? Internet{
+    print("internetGBUsed  :\(c.internetGBUsed)")
+    print("providerName :\(c.providerName) Units")
+}
+print("***************************************")
+print("Bill Id :\(String(describing: cutomer2.bills[4]!.billId))")
+print("Bill Date : \(String(describing: cutomer2.bills[4]!.billDate))")
+print("Bill Type : \(String(describing: cutomer2.bills[4]!.billType))")
+print("Bill Amount : \(String(describing: cutomer2.bills[4]!.totalBillAmount))")
+if let c = cutomer2.bills[4] as? Internet{
+    print("internetGBUsed  :\(c.internetGBUsed)")
+    print("providerName :\(c.providerName) Units")
+}
+print("***************************************")
+print("Total Bill Amount To be paid : \(cutomer2.totalAmountToBePaid)")
+print("***************************************")
+
+
+
+var cust = [cutomer1, cutomer2]
+
+
+
+let sortedcust = cust.sorted(by:   {o1, o2 in
+    return o1.totalAmountToBePaid > o2.totalAmountToBePaid
+})
+
+for cust in sortedcust {
+    print(cust.customerId)
+}
+
